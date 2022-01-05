@@ -6,4 +6,6 @@ RUN echo 'Asia/Shanghai' > /etc/timezone
 WORKDIR /medical
 COPY . .
 # localhost neo4j
+RUN sed -i 's/localhost/neo4j/g' answer_search.py
+RUN sed -i 's/localhost/neo4j/g' build_medicalgraph.py
 ENTRYPOINT ["python","chatbot_graph.py"]
