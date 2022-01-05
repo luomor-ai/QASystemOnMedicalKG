@@ -4,11 +4,11 @@ services:
   neo4j:
     image: neo4j:4.1.4
     volumes:
-      - ./conf:/var/lib/neo4j/conf
-      - ./mnt:/var/lib/neo4j/import
-      - ./plugins:/plugins
-      - ./data:/data
-      - ./logs:/var/lib/neo4j/logs
+      - ./neo4j/conf:/var/lib/neo4j/conf
+      - ./neo4j/mnt:/var/lib/neo4j/import
+      - ./neo4j/plugins:/plugins
+      - ./neo4j/data:/data
+      - ./neo4j/logs:/var/lib/neo4j/logs
     restart: always
     # privileged: true
     ports:
@@ -17,3 +17,14 @@ services:
     environment:
       - NEO4J_dbms_memory_heap_maxSize=4G
       - NEO4J_AUTH=neo4j/123456  #修改默认用户密码
+
+  medical:
+    build:
+      context: ../
+      dockerfile: Dockerfile
+    container_name: medical
+    volumes:
+      - /etc/localtime:/etc/localtime
+    depends_on:
+      - neo4j
+    restart: always
