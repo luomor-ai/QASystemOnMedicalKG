@@ -23,4 +23,8 @@ Graph("bolt://localhost:7687", auth=("neo4j", "123456"))
             http_port=7474,
             user="neo4j",
             password="123456")
+            
+Graph("bolt://localhost:7687", auth=("neo4j", "password"))
+
+vivante gpu
 ```
