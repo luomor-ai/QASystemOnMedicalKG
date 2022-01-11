@@ -13,4 +13,4 @@ COPY . .
 # localhost neo4j
 RUN sed -i 's/localhost/neo4j/g' answer_search.py
 RUN sed -i 's/localhost/neo4j/g' build_medicalgraph.py
-ENTRYPOINT ["bash"]
+CMD ["bash"]
