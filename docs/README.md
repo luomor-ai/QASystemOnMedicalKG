@@ -14,6 +14,7 @@ sudo pip3 install pyahocorasick -i https://pypi.tuna.tsinghua.edu.cn/simple/
 sudo yum install python3-devel
 
 sudo docker build -t yiluxiangbei/medical-kg:v1 . 
+sudo docker run -it yiluxiangbei/medical-kg:v1 bash
 ```
 
 ```python
