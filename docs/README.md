@@ -17,6 +17,8 @@ sudo docker build -t yiluxiangbei/medical-kg:v1 .
 sudo docker run -it yiluxiangbei/medical-kg:v1 bash
 
 sudo docker push yiluxiangbei/medical-kg:v1
+
+docker rmi `docker images | grep none | awk '{print $3}'`
 ```
 
 ```python
