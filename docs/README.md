@@ -15,6 +15,8 @@ sudo yum install python3-devel
 
 sudo docker build -t yiluxiangbei/medical-kg:v1 . 
 sudo docker run -it yiluxiangbei/medical-kg:v1 bash
+
+sudo docker push yiluxiangbei/medical-kg:v1
 ```
 
 ```python
