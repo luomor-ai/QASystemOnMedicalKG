@@ -1,4 +1,6 @@
 FROM python:3.6
+RUN sudo apt-get install aptitude
+RUN sudo aptitude install python-dev
 RUN sudo pip3 install py2neo
 RUN pip3 install pyahocorasick -i https://pypi.tuna.tsinghua.edu.cn/simple/
 RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
